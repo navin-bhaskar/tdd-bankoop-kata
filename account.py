@@ -12,4 +12,6 @@ class Account:
     def credit_amount(self, amt: int):
         self._balance += amt
 
+    def get_balance(self):
+        return self._balance
     
