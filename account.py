@@ -9,3 +9,6 @@ class Account:
     def get_account_id(self):
         return self._account_id
     
+    def credit_amount(self, amt: int):
+        self._balance += amt
+    
