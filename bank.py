@@ -6,5 +6,7 @@ class Bank:
         self._accounts = dict()
 
     def add_account(self, account_id: str):
+        if account_id in self._accounts:
+            raise ValueError(f"Account '{account_id}' already in records")
         self._accounts[account_id] = Account()
         
