@@ -23,7 +23,14 @@ class TestBan(TestCase):
         with self.assertRaises(ValueError) as em:
             new_bank.get_account('1234')
 
-        self.assertEqual(str(em.exception), "No such account: '1234'") 
+        self.assertEqual(str(em.exception), "No such account: '1234'")
+
+    def test_crediting_amount_to_account__amount_is_credited_to_acount(self):
+        new_bank = Bank('Laxmi Chit Fund')
+        new_bank.add_account('1234')
+
+        new_bank.credit_amount('1234', 100)
+
 
         
 
