@@ -15,3 +15,6 @@ class Account:
     def get_balance(self):
         return self._balance
     
+    def debit_amount(self, amt: int):
+        self._balance -= amt
+    
