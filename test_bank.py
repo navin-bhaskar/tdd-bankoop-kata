@@ -8,6 +8,7 @@ class TestBan(TestCase):
         new_bank = Bank('Laxmi Chit Fund')
         new_bank.add_account('1234')
         account = new_bank.get_account('1234')
+        self.assertEqual(account.get_account_id(), '1234')
 
     def test__adding_duplicate_account__raises_exception(self):
         new_bank = Bank('Laxmi Chit Fund')
