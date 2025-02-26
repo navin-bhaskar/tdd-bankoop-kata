@@ -17,5 +17,13 @@ class TestBan(TestCase):
             new_bank.add_account('1234')
 
         self.assertEqual(str(em.exception), "Account '1234' already in records") 
+
+    def test_getting_non_existent_account__raises_exception(self):
+        new_bank = Bank('Laxmi Chit Fund')
+        with self.assertRaises(ValueError) as em:
+            new_bank.get_account('1234')
+
+        self.assertEqual(str(em.exception), "No such account: '1234'") 
+
         
 

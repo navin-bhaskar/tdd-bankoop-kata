@@ -8,6 +8,7 @@ class Bank:
     def add_account(self, account_id: str):
         if account_id in self._accounts:
             raise ValueError(f"Account '{account_id}' already in records")
+        # TODO: Add a builder pattern in future
         self._accounts[account_id] = Account(account_id)
         
     def get_account(self, account_id: str) -> Account:
