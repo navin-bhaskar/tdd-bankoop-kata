@@ -18,4 +18,5 @@ class Bank:
     
     def credit_amount(self, account_id: str, amount: int):
         account = self.get_account(account_id)
+        account.credit_amount(amount)
         
