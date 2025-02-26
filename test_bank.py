@@ -44,6 +44,7 @@ class TestBan(TestCase):
         self.assertEqual(act.get_balance(), 100)
 
         new_bank.debit_amount('1234', 50)
+        
 
 
         
