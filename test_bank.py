@@ -31,6 +31,9 @@ class TestBan(TestCase):
 
         new_bank.credit_amount('1234', 100)
 
+        act = new_bank.get_account('1234')
+        self.assertEqual(act.get_amount(), 100)
+
 
         
 
