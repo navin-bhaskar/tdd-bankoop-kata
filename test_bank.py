@@ -25,7 +25,7 @@ class TestBan(TestCase):
 
         self.assertEqual(str(em.exception), "No such account: '1234'")
 
-    def test_crediting_amount_to_account__amount_is_credited_to_acount(self):
+    def test_crediting_amount_to_account__amount_is_credited_to_account(self):
         new_bank = Bank('Laxmi Chit Fund')
         new_bank.add_account('1234')
 
@@ -33,6 +33,17 @@ class TestBan(TestCase):
 
         act = new_bank.get_account('1234')
         self.assertEqual(act.get_balance(), 100)
+
+    def test_debiting_amount_to_account__amount_is_debited_from_account(self):
+        new_bank = Bank('Laxmi Chit Fund')
+        new_bank.add_account('1234')
+
+        new_bank.credit_amount('1234', 100)
+
+        act = new_bank.get_account('1234')
+        self.assertEqual(act.get_balance(), 100)
+
+        new_bank.debit_amount('1234', 50)
 
 
         
