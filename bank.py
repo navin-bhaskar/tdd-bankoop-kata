@@ -15,3 +15,7 @@ class Bank:
         if account_id not in self._accounts:
             raise ValueError(f"No such account: '{account_id}'")
         return self._accounts[account_id]
+    
+    def credit_amount(self, account_id: str, amount: int):
+        account = self.get_account(account_id)
+        
