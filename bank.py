@@ -22,4 +22,5 @@ class Bank:
 
     def debit_amount(self, account_id: str, amount: int):
         account = self.get_account(account_id)
+        account.debit_amount(amount)
         
