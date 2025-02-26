@@ -12,4 +12,6 @@ class Bank:
         self._accounts[account_id] = Account(account_id)
         
     def get_account(self, account_id: str) -> Account:
+        if account_id not in self._accounts:
+            raise ValueError(f"No such account: '{account_id}'")
         return self._accounts[account_id]
