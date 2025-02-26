@@ -16,5 +16,7 @@ class Account:
         return self._balance
     
     def debit_amount(self, amt: int):
+        if self._balance - amt < 0:
+            raise ValueError("Invalid transaction")
         self._balance -= amt
     

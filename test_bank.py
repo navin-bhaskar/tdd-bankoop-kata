@@ -53,7 +53,7 @@ class TestBan(TestCase):
         new_bank.credit_amount('1234', 100)
 
         with self.assertRaises(ValueError) as cm:
-            new_bank.debit_amount(150)
+            new_bank.debit_amount('1234', 150)
 
         self.assertEqual(str(cm.exception), "Invalid transaction")
         
