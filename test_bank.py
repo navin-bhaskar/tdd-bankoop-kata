@@ -45,6 +45,17 @@ class TestBan(TestCase):
 
         new_bank.debit_amount('1234', 50)
         self.assertEqual(act.get_balance(), 50)
+
+    def test__debiting_results_in_negative_balance__debiting_not_allowed(self):
+        new_bank = Bank('Laxmi Chit Fund')
+        new_bank.add_account('1234')
+
+        new_bank.credit_amount('1234', 100)
+
+        with self.assertRaises(ValueError) as cm:
+            new_bank.debit_amount(150)
+
+        self.assertEqual(str(cm.exception), "Invalid transaction")
         
 
 
